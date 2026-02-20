@@ -55,7 +55,7 @@ body {
 
 <!-- SIDEBAR -->
 <div class="sidebar d-flex flex-column p-3">
-    <h4 class="text-center mb-4">GBE Angola</h4>
+    <h4 class="text-center mb-4">GBE</h4>
 
     <a href="#" onclick="loadPage('dashboard', this)" class="active">
         <i class="bi bi-speedometer2"></i> Dashboard
@@ -82,7 +82,7 @@ body {
 
 <!-- FOOTER -->
 <div class="footer text-center">
-    © 2026 Global Business Education Angola — Painel Administrativo
+    © 2026 Global Business Education — Painel Administrativo
 </div>
 
 <script>
@@ -108,7 +108,7 @@ function loadPage(page, el) {
 
 function renderDashboard() {
     document.getElementById("mainContent").innerHTML = `
-        <h2 class="mb-4">Dashboard Geral - Angola</h2>
+        <h2 class="mb-4">Dashboard Geral - Global Business Education</h2>
 
         <div class="row">
 
@@ -122,7 +122,7 @@ function renderDashboard() {
 
             <div class="col-md-3">
                 <div class="card shadow p-3 card-hover">
-                    <h6>Estágios em Portugal</h6>
+                    <h6>Estágios concluídos</h6>
                     <h3>126</h3>
                 </div>
             </div>
@@ -136,8 +136,9 @@ function renderDashboard() {
 
             <div class="col-md-3">
                 <div class="card shadow p-3 card-hover">
-                    <h6>Cursos Técnicos Internacionais</h6>
-                    <h3>14</h3>
+                    <h6>Total Estudantes formados</h6>
+                    <h3>1490</h3>
+                    <small class="text-success">+70% desde 2020</small>
                 </div>
             </div>
 
@@ -169,7 +170,37 @@ function renderInscricoes() {
                 <tr>
                     <td>Ana João</td>
                     <td>Luanda</td>
-                    <td>Estágio em Lisboa</td>
+                    <td>Estágio Profissional</td>
+                    <td><span class="badge bg-warning">Pendente</span></td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onclick="aprovar()">Aprovar</button>
+                        <button class="btn btn-danger btn-sm">Rejeitar</button>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>Nataniel Alberto Dala</td>
+                    <td>Luanda</td>
+                    <td>Intercâmbio</td>
+                    <td><span class="badge bg-warning">Pendente</span></td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onclick="aprovar()">Aprovar</button>
+                        <button class="btn btn-danger btn-sm">Rejeitar</button>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>Edna Alberto</td>
+                    <td>Luanda</td>
+                    <td>Estágio Profissional</td>
+                    <td><span class="badge bg-warning">Pendente</span></td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onclick="aprovar()">Aprovar</button>
+                        <button class="btn btn-danger btn-sm">Rejeitar</button>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>José Dos Santos</td>
+                    <td>Luanda</td>
+                    <td>Estágio Curricular</td>
                     <td><span class="badge bg-warning">Pendente</span></td>
                     <td>
                         <button class="btn btn-success btn-sm" onclick="aprovar()">Aprovar</button>
@@ -202,7 +233,7 @@ function renderUtilizadores() {
                 <tr>
                     <th>Nome</th>
                     <th>Curso Designado</th>
-                    <th>Destino</th>
+                    <th>Programa</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -210,7 +241,7 @@ function renderUtilizadores() {
                 <tr>
                     <td>Carlos Mendes</td>
                     <td>Gestão Empresarial</td>
-                    <td>Portugal</td>
+                    <td>Estágio Profissional</td>
                     <td>
                         <button class="btn btn-warning btn-sm">Editar</button>
                         <button class="btn btn-danger btn-sm">Remover</button>
@@ -227,26 +258,27 @@ function renderUtilizadores() {
 
 function renderCursos() {
     document.getElementById("mainContent").innerHTML = `
-        <h2>Cursos Internacionais</h2>
+        <h2>Cursos Disponíveis para Estudantes e Estagiários</h2>
 
         <table class="table table-hover mt-4">
             <thead>
                 <tr>
                     <th>Curso</th>
-                    <th>País</th>
                     <th>Duração</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Gestão Empresarial Internacional</td>
-                    <td>Portugal</td>
-                    <td>6 Meses</td>
+                    <td>Contabilidade</td>
+                    <td>3 Meses</td>
                 </tr>
                 <tr>
                     <td>Engenharia Industrial</td>
-                    <td>Brasil</td>
-                    <td>1 Ano</td>
+                    <td>3 Meses</td>
+                </tr>
+                <tr>
+                    <td>Gestão de Projetos</td>
+                    <td>3 Meses</td>
                 </tr>
             </tbody>
         </table>
