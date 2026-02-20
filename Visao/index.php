@@ -35,10 +35,11 @@
         <p class="lead mb-4">
             Oferecemos estágios profissionais, intercâmbios, cursos curriculares e experiências académicas para acelerar sua carreira internacional.
         </p>
-        <button onclick="openModal()" 
-            class="btn btn-warning btn-lg shadow-lg px-5 py-3 fw-bold">
-            Inscreva-se Já
-        </button>
+        <button class="btn btn-warning"
+        data-bs-toggle="modal"
+        data-bs-target="#inscricaoModal">
+    Inscreva-se Já
+</button>
     </div>
 </section>
 
@@ -94,87 +95,167 @@
     <div class="container">
         <h2 class="fw-bold mb-3">Pronto para mudar o seu futuro?</h2>
         <p class="mb-4">Inscreva-se agora e comece a sua jornada internacional.</p>
-        <button onclick="openModal()" 
-            class="btn btn-warning btn-lg px-5 fw-bold shadow">
-            Inscreva-te Já
-        </button>
+<button class="btn btn-warning btn-lg px-5 fw-bold shadow"
+        data-bs-toggle="modal"
+        data-bs-target="#inscricaoModal">
+    Inscreva-te Já
+</button>
+<a href="login.php" class="btn btn-outline-light btn-lg px-5 fw-bold">Admin</a>
     </div>
 </section>
 
-<!-- MODAL -->
-<div id="inscricaoModal" 
-     class="fixed inset-0 hidden items-center justify-center modal-backdrop-custom z-50">
-    
-    <div class="bg-white rounded-4 shadow-2xl w-full max-w-2xl p-5 position-relative">
-        
-        <button onclick="closeModal()" 
-            class="btn-close position-absolute top-0 end-0 m-3"></button>
+<!-- MODAL INSCRIÇÃO PROFISSIONAL -->
+<div class="modal fade" id="inscricaoModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content shadow-lg">
 
-        <h3 class="fw-bold mb-4 text-center text-blue-900">
-            Inscrição Online
-        </h3>
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">
+          <i class="bi bi-pencil-square"></i> Inscrição Oficial - Global Business Education Angola
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
 
-        <form id="formInscricao">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" required>
-                </div>
+      <div class="modal-body">
+        <form id="formInscricao" enctype="multipart/form-data">
 
-                <div class="col-md-6">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" required>
-                </div>
+          <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Programa de Interesse</label>
-                    <select class="form-select" required>
-                        <option value="">Selecionar...</option>
-                        <option>Intercâmbio</option>
-                        <option>Estágio Profissional</option>
-                        <option>Cursos Curriculares</option>
-                        <option>Experiências Académicas</option>
-                    </select>
-                </div>
-
-                <div class="col-12">
-                    <label class="form-label">Mensagem</label>
-                    <textarea class="form-control" rows="3"></textarea>
-                </div>
-
-                <div class="col-12 text-center mt-3">
-                    <button type="submit" 
-                        class="btn btn-primary btn-lg px-5 fw-bold shadow">
-                        Enviar Inscrição
-                    </button>
-                </div>
+            <!-- Nome -->
+            <div class="col-md-6">
+              <label class="form-label">Nome Completo *</label>
+              <input type="text" name="nome" class="form-control" required>
             </div>
-        </form>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <label class="form-label">Email *</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <!-- Telefone com Indicativo -->
+            <div class="col-md-6">
+              <label class="form-label">Telefone *</label>
+              <div class="input-group">
+                <span class="input-group-text">+244</span>
+                <input type="tel" name="telefone" class="form-control" 
+                       pattern="[0-9]{9}" 
+                       placeholder="912345678"
+                       required>
+              </div>
+              <small class="text-muted">Digite 9 dígitos sem espaços.</small>
+            </div>
+
+            <!-- Programa -->
+            <div class="col-md-6">
+              <label class="form-label">Programa de Interesse *</label>
+              <select name="programa" class="form-select" required>
+                <option value="">Selecionar...</option>
+                <option>Estágio Profissional</option>
+                <option>Intercâmbio</option>
+                <option>Curso Internacional</option>
+              </select>
+            </div>
+
+            <!-- Turma -->
+            <div class="col-md-6">
+              <label class="form-label">Turma Disponível *</label>
+              <select name="turma" class="form-select" required>
+                <option value="">Selecionar...</option>
+                <option>Segunda - Quinta</option>
+                <option>Terça - Sexta</option>
+                <option>Quarta - Sábado</option>
+              </select>
+            </div>
+
+            <!-- Sessão -->
+            <div class="col-md-6">
+              <label class="form-label">Sessão Horária *</label>
+              <select name="sessao" class="form-select" required>
+                <option value="">Selecionar...</option>
+                <option>08h - 10h</option>
+                <option>11h - 13h</option>
+                <option>13h15 - 15h</option>
+                <option>15h15 - 17h</option>
+              </select>
+            </div>
+
+            <!-- Carta Motivação -->
+            <div class="col-12">
+              <label class="form-label">Carta de Motivação *</label>
+              <textarea name="motivacao" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <!-- Upload BI -->
+            <div class="col-md-6">
+              <label class="form-label">Documento de Identificação (PDF ou JPG) *</label>
+              <input type="file" name="bi" class="form-control" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+            <!-- Upload Comprovativo -->
+            <div class="col-md-6">
+              <label class="form-label">Comprovativo de Pagamento *</label>
+              <input type="file" name="pagamento" class="form-control" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-success btn-lg px-5">
+                <i class="bi bi-send-check"></i> Submeter Candidatura
+              </button>
+            </div>
+
+          </div>
+
+         </form>
+       </div>
     </div>
+  </div>
 </div>
-
 <!-- JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+
+// =============================
+// ABRIR MODAL (Bootstrap)
+// =============================
 function openModal() {
-    document.getElementById("inscricaoModal").classList.remove("hidden");
-    document.getElementById("inscricaoModal").classList.add("flex");
+    const modal = new bootstrap.Modal(document.getElementById('inscricaoModal'));
+    modal.show();
 }
 
-function closeModal() {
-    document.getElementById("inscricaoModal").classList.add("hidden");
-    document.getElementById("inscricaoModal").classList.remove("flex");
-}
+// =============================
+// VALIDAÇÃO E SUBMISSÃO
+// =============================
+document.addEventListener("DOMContentLoaded", function () {
 
-// Example submit handler
-document.getElementById("formInscricao").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Inscrição enviada com sucesso!");
-    closeModal();
+    const form = document.getElementById("formInscricao");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+        }
+
+        // =============================
+        // FUTURO BACKEND
+        // =============================
+        // const formData = new FormData(form);
+        // fetch('/api/inscricoes', {
+        //     method: 'POST',
+        //     body: formData
+        // })
+
+        alert("Candidatura submetida com sucesso! Aguarde validação.");
+
+        form.reset();
+        form.classList.remove("was-validated");
+
+        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('inscricaoModal'));
+        modalInstance.hide();
+    });
+
 });
 </script>
 
